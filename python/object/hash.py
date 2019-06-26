@@ -44,7 +44,7 @@ class HashTable(object):
         while i < self.size:
             j = self.hash_method(self.size, t, i)
             if self.array_status[j] == self.ElementStatus.Empty:
-                return False
+                return -1
             elif self.array_status[j] == self.ElementStatus.Full:
                 if self.array_data[j].key() == t.key():
                     return j
@@ -63,8 +63,20 @@ class HashTable(object):
             i += 1
         return -1
 
-def linear_hash_method(size, t, i):
+def linear_probe(size, t, i):
     return (t.hash()+i)%size
+
+def quadratic_probe(size, t, i):
+    return (t.hash()%size + i * i)%size
+
+def double_probe_1(size, t, i):
+    """
+    size为素数，
+    """
+    pass
+
+def double_probe_2(size, t, i):
+    pass
 
 class StringTemplate(Template):
     def __init__(self, text):
@@ -76,12 +88,13 @@ class StringTemplate(Template):
     def hash(self):
         return hash(self.text)
 
-if __name__ == "__main__":
+def test_linear_hash():
+    print("test linear hash")
     s1 = StringTemplate(text="abc")
     s2 = StringTemplate(text="abc")
     s3 = StringTemplate(text="abc")
     
-    table = HashTable(hash_method=linear_hash_method)
+    table = HashTable(hash_method=linear_probe)
     i1 = table.insert(s1)
     print(i1)
     i2 = table.insert(s2)
@@ -91,3 +104,24 @@ if __name__ == "__main__":
 
     for i in range(0, len(table.array_data)):
         print("index: %d, data: %s" % (i, table.array_data[i]))
+
+def test_quadratic_hash():
+    print("test linear hash")
+    s1 = StringTemplate(text="abc")
+    s2 = StringTemplate(text="abc")
+    s3 = StringTemplate(text="abc")
+    
+    table = HashTable(hash_method=quadratic_probe)
+    i1 = table.insert(s1)
+    print(i1)
+    i2 = table.insert(s2)
+    print(i2)
+    i3 = table.insert(s3)
+    print(i3)
+
+    for i in range(0, len(table.array_data)):
+        print("index: %d, data: %s" % (i, table.array_data[i]))
+if __name__ == "__main__":
+    test_linear_hash()
+    test_quadratic_hash()
+    
