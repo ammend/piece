@@ -1,0 +1,18 @@
+apiVersion: apps/v1beta2
+kind: DaemonSet
+metadata:
+    name: monitor
+spec:
+    selector:
+        matchLabels:
+            app: monitor
+    template:
+        metadata:
+            labels:
+                app: monitor
+        spec:
+            nodeSelector:
+                disk: mac
+            containers:
+            - name: main
+              image: luksa/monitor
