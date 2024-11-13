@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func main() {
+func main2() {
 	http.HandleFunc("/echo", func(w http.ResponseWriter, r *http.Request) {
 		go func() {
 			for range time.Tick(time.Second) {

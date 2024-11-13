@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func main() {
+func main3() {
 	http.HandleFunc("/echo", func(w http.ResponseWriter, r *http.Request) {
 		// monitor
 		go func() {

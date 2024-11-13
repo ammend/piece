@@ -7,7 +7,7 @@ import (
 
 type ctxKey string
 
-func main() {
+func main4() {
 	ctx := context.WithValue(context.Background(), ctxKey("a"), "b")
 
 	get := func(ctx context.Context, k ctxKey) {
