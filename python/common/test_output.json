@@ -1,0 +1,23 @@
+[
+    {
+        "repo_name": "scm/a",
+        "repo_owner": "zoujianyu",
+        "config": {
+            "reviewers": "[\"reviewerA\", \"reviewerB\"]"
+        }
+    },
+    {
+        "repo_name": "scm/b",
+        "repo_owner": "zoujianyu",
+        "config": {
+            "reviewers": "[\"reviewerA\"]"
+        }
+    },
+    {
+        "repo_name": "scm/c",
+        "repo_owner": "zoujianyu",
+        "config": {
+            "reviewers": "[\"reviewerA\"]"
+        }
+    }
+]

@@ -4,3 +4,4 @@ venv/*
 *.pyc
 logs/*
 run/*
+.*

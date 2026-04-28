@@ -1,0 +1,10 @@
+repo1,scm/a,reviewerA
+repo1,scm/a,reviewerC
+repo1,scm/a,reviewerD
+repo1,scm/a,reviewerE
+repo1,scm/a,reviewerF
+repo1,scm/a,reviewerG
+repo1,scm/a,reviewerA
+repo1,scm/b,reviewerA
+repo1,scm/a,reviewerB
+repo2,scm/c,reviewerA
